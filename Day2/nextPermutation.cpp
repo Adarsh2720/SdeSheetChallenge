@@ -1,4 +1,12 @@
 #include <bits/stdc++.h> 
+
+void reverseArray(vector<int>&arr,int start,int end) {
+    while(start<end)
+    {
+        swap(arr[start],arr[end]);
+        start++;end--;
+    }
+}
 vector<int> nextPermutation(vector<int> &arr, int n)
 {
     // step 1. for find the number such that arr[i] < arr[i+1] from right to left
@@ -20,9 +28,10 @@ vector<int> nextPermutation(vector<int> &arr, int n)
     }
     
     i++;
-    
+
     //3. reverse the array
-    reverse(arr.begin()+i,arr.end());
+    // reverse(arr.begin()+i,arr.end());
+    reverseArray(arr,i,n-1)
     
     return arr;
     
