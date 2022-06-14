@@ -68,12 +68,28 @@ void print(Node* &head)
 }
 
 
-
-
-
-
 //Delete Node by postion
 
+void deleteNode(Node* &head,int pos)
+{
+    Node *delNode;
+    if(pos==1)
+    {
+        delNode=head;
+        head=head->next;
+    }
+    else
+    {
+        Node *curr=head;
+
+        for(int i=1;i<=pos-2;i++)
+            curr=curr->next;
+
+        delNode=curr->next;
+        curr->next=curr->next->next;
+    }
+    delete delNode;
+}
 
 
 
@@ -105,6 +121,10 @@ main()
     //Insert at middle
     insertAtMiddle(head,3,100);
     insertAtMiddle(head,7,200);
+    print(head);
+
+    deleteNode(head,7);
+    cout<<"\n";
     print(head);
 
 
