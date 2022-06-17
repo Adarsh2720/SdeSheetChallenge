@@ -92,9 +92,6 @@ void deleteNode(Node* &head,int pos)
 }
 
 
-
-
-
 main()
 {
 
