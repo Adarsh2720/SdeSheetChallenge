@@ -15,7 +15,7 @@ bool isValid(string s) {
 	    {
 		if(s[i]==')')
 		{
-		    //If the stack if empty but we counter ) for the cases like ")"
+		    //if empty but we counter ) for the cases like ")((("
 		    if(st.empty() || st.top()!='(')
 		        return false;
 		    else
@@ -23,7 +23,7 @@ bool isValid(string s) {
 		}
 		else if(s[i]==']')
 		{
-		    //If the stack if empty but we counter ) for the cases like "]"
+		    //if empty but we counter ] for the cases like "][[[["
 		    if(st.empty() || st.top()!='[')
 		        return false;
 		    else
@@ -31,7 +31,7 @@ bool isValid(string s) {
 		}
 		else
 		{
-		    //If the stack if empty but we counter ) for the cases like "}"
+		    //if empty but we counter } for the cases like "}{{{"
 		    if(st.empty() || st.top()!='{' )
 		        return false;
 		    else
@@ -48,6 +48,9 @@ bool isValid(string s) {
 	    return false;
 
 	return true;
+	
+	
+	return st.empty();
 }
 
 // Optimized Soln
